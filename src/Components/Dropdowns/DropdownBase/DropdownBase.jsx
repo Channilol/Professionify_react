@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
+import { FiCheck } from "react-icons/fi";
+import './DropdownBase.css'
 
 export default function DropdownBase({ list, setFunction, stateName }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +23,7 @@ export default function DropdownBase({ list, setFunction, stateName }) {
           <p>{obj.name}</p>
           <p className="model-description">{obj.description}</p>
         </div>
+        {obj.name === stateName ? <div className="item-check"><FiCheck /></div> : null}
       </div>
     );
   }
@@ -47,8 +50,7 @@ export default function DropdownBase({ list, setFunction, stateName }) {
         ref={buttonRef}
         onClick={toggleDropdown}
       >
-        {/* QUI NON FUNZIONA */}
-        {/* <span>{list.find((obj) => obj.name === stateName).icon}</span> */}
+        <span>{list.find((obj) => obj.name === stateName).icon}</span>
         <p>{stateName}</p>
         <span className={`dropdown-arrow ${isOpen ? "open" : ""}`}>
           <BsChevronDown />

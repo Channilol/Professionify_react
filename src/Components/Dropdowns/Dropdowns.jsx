@@ -3,7 +3,7 @@ import "./Dropdowns.css";
 import { MdKey, MdOutgoingMail } from "react-icons/md";
 import { BsFileEarmarkTextFill } from "react-icons/bs";
 import { FiFileText, FiLayers, FiZap } from "react-icons/fi";
-import { FaHandshake, FaUserFriends, FaUserTie } from "react-icons/fa";
+import { FaHandshake, FaUserFriends, FaUserTie, FaUsers, FaCommentDots } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import {
   changeAddressee,
@@ -19,51 +19,61 @@ export default function Dropdowns() {
   const textLength = useSelector((state) => state.selectionReducer.textLength);
   const models = [
     {
-      model: "Professional email",
+      name: "Casual",
+      icon: <FaCommentDots />,
+      description: "Model for casual and informal text",
+    },
+    {
+      name: "Professional email",
       icon: <MdOutgoingMail />,
       description: "Model for professional emails based on the recipient",
     },
     {
-      model: "Key points",
+      name: "Key points",
       icon: <MdKey />,
       description: "Model to summarize content into key highlights",
     },
     {
-      model: "Technical document",
+      name: "Technical document",
       icon: <BsFileEarmarkTextFill />,
       description: "Model to transform text into a technical document",
     },
   ];
   const addressees = [
     {
-      addressee: "Colleague",
+      name: "Friend",
       icon: <FaUserFriends />,
-      description: "Informal and collaborative tone for peer communication",
+      description: "Informal and friendly conversation like text",
     },
     {
-      addressee: "Client",
+      name: "Client",
       icon: <FaHandshake />,
       description: "Professional and courteous tone for business relationships",
     },
     {
-      addressee: "Manager",
+      name: "Colleague",
+      icon: <FaUsers />,
+      description: "Informal and collaborative tone for peer communication",
+    },
+    {
+      name: "Manager",
       icon: <FaUserTie />,
       description: "Formal and respectful tone for executive communication",
     },
   ];
   const textLengths = [
     {
-      textLength: "Short",
+      name: "Short",
       icon: <FiZap />,
       description: "Concise and brief text output",
     },
     {
-      textLength: "Standard",
+      name: "Standard",
       icon: <FiFileText />,
       description: "Balanced text length with adequate detail",
     },
     {
-      textLength: "Long",
+      name: "Long",
       icon: <FiLayers />,
       description: "Extended and comprehensive text output",
     },
@@ -85,18 +95,21 @@ export default function Dropdowns() {
   };
 
   return (
-    <div className="dropdowns">
-      <DropdownBase list={models} setFunction={setModel} stateName={model} />
-      <DropdownBase
-        list={addressees}
-        setFunction={setAddressee}
-        stateName={addressee}
-      />
-      <DropdownBase
-        list={textLengths}
-        setFunction={setTextLength}
-        stateName={textLength}
-      />
-    </div>
+    <>
+      <h2 className="dropdown-title">Choose the style of text you want</h2>
+      <div className="dropdowns">
+        <DropdownBase list={models} setFunction={setModel} stateName={model} />
+        <DropdownBase
+          list={addressees}
+          setFunction={setAddressee}
+          stateName={addressee}
+        />
+        <DropdownBase
+          list={textLengths}
+          setFunction={setTextLength}
+          stateName={textLength}
+        />
+      </div>
+    </>
   );
 }

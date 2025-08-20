@@ -4,6 +4,7 @@ import Logo from '../../assets/logo.png'
 import { MdLogin } from "react-icons/md";
 import { BsPersonCircle } from "react-icons/bs";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import HeaderButton from './HeaderButton/HeaderButton';
 
 
 export default function Header() {
@@ -14,7 +15,7 @@ export default function Header() {
                     <img src={Logo} alt="Logo" />
                 </div>
                 <p className="header-text">
-                    Professionify
+                    Textify
                 </p>
             </div>
             <div className="header-right-section">
@@ -24,12 +25,8 @@ export default function Header() {
                         Login
                     </p>
                 </button>
-                <div className="header-btn">
-                    <BsPersonCircle />
-                </div>
-                <div className="header-btn">
-                    <BsFillMoonStarsFill />
-                </div>
+                <HeaderButton child={<BsPersonCircle />} />
+                <HeaderButton child={<BsFillMoonStarsFill />} />
             </div>
         </header>
     )

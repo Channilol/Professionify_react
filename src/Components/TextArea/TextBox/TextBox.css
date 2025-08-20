@@ -1,0 +1,25 @@
+.textbox-container h3 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+    opacity: 0.25;
+}
+
+.textbox {
+    width: 100%;
+    height: 500px;
+    font-size: 14px;
+    padding: 12px;
+    background-color: var(--bg);
+    border-radius: var(--border-radius-s);
+    border: none;
+    outline: 2px solid rgba(255, 255, 255, 255);
+    box-shadow: var(--shadow-s);
+    resize: none;
+    transition: .2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.textbox:focus {
+    outline: 2px solid var(--gradient-start);
+}

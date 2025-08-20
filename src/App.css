@@ -45,6 +45,12 @@
   font-family: var(--open-sans);
   color: var(--text);
   user-select: none;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .App {
@@ -55,4 +61,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@keyframes buttonClick {
+  from {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.925);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }

@@ -1,0 +1,195 @@
+.main-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--primary);
+    border-radius: var(--border-radius-s);
+    border: 1px solid var(--border);
+    padding: 16px;
+    margin-top: 36px;
+}
+
+.input-output-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-text-area {
+    width: calc(50% - 12px);
+}
+
+.output-text-area {
+    width: calc(50% - 12px);
+}
+
+.output-text-area h3 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 12px;
+    opacity: 1;
+    background: linear-gradient(155deg,
+            var(--gradient-start) 20%,
+            var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    position: relative;
+}
+
+.textbox {
+    width: 100%;
+    height: 500px;
+    font-size: 14px;
+    padding: 12px;
+    background-color: var(--bg);
+    border-radius: var(--border-radius-s);
+    border: none;
+    outline: 2px solid rgba(255, 255, 255, 255);
+    box-shadow: var(--shadow-s);
+    resize: none;
+    transition: .2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.ai-text-box {
+    width: 100%;
+    height: 500px;
+    font-size: 14px;
+    padding: 12px;
+    background-color: var(--bg);
+    border-radius: var(--border-radius-s);
+    border: none;
+    outline: 2px solid rgba(255, 255, 255, 255);
+    box-shadow: var(--shadow-s);
+    resize: none;
+    transition: .2s cubic-bezier(0.215, 0.610, 0.355, 1);
+    cursor: not-allowed;
+    position: relative;
+    overflow-y: scroll;
+
+    /* Nasconde la scrollbar su Webkit (Chrome, Safari, Edge moderno) */
+    -webkit-overflow-scrolling: touch;
+}
+
+.ai-text-box::-webkit-scrollbar {
+    display: none;
+}
+
+.ai-text-box {
+    scrollbar-width: none;
+}
+
+.ai-text-box:hover {
+    outline: 2px solid var(--gradient-end);
+}
+
+.copy-to-clipboard {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    padding: 4px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--primary);
+    border-radius: var(--border-radius-s);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-s);
+    z-index: 10;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--bg) !important;
+    cursor: pointer;
+}
+
+.copy-to-clipboard.clicked {
+    animation: buttonClick .2s ease-in-out forwards;
+}
+
+.generate-text-button {
+    align-self: center;
+    width: 300px;
+    height: 60px;
+    border: none;
+    border-radius: var(--border-radius-m);
+    background: linear-gradient(155deg,
+            var(--gradient-start) 20%,
+            var(--gradient-end));
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    cursor: pointer;
+}
+
+.generate-text-button img {
+    height: 32px;
+}
+
+.generate-text-button p {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--bg);
+    text-align: center;
+    width: 100%;
+}
+
+.generate-text-button:hover {
+    background: linear-gradient(135deg,
+            var(--gradient-start),
+            var(--gradient-end),
+            var(--gradient-start),
+            var(--gradient-end));
+    background-size: 800% 800%;
+    animation: gradientShift 20s ease-in-out infinite;
+    will-change: background-position;
+}
+
+.generate-text-button.generating {
+    background: linear-gradient(135deg,
+            var(--gradient-start),
+            var(--gradient-end),
+            var(--gradient-start),
+            var(--gradient-end));
+    background-size: 500% 500%;
+    will-change: background-position;
+    animation: gradientShift 8s ease-in-out infinite, scaleInAnimation .35s ease-in-out forwards;
+}
+
+.generate-text-button.generation-done {
+    animation: scaleOutAnimation .35s ease-in-out forwards;
+}
+
+@keyframes scaleInAnimation {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes scaleOutAnimation {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

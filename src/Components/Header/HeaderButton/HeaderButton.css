@@ -1,0 +1,3 @@
+.header-btn.clicked {
+    animation: buttonClick .2s ease-in-out forwards;
+}

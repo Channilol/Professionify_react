@@ -24,11 +24,9 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    to bottom right,
-    var(--gradient-start) 10%,
-    var(--gradient-end)
-  );
+  background: linear-gradient(to bottom right,
+      var(--gradient-start) 10%,
+      var(--gradient-end));
   border-radius: var(--border-radius-s);
 }
 
@@ -38,8 +36,8 @@ header {
 }
 
 .header-text {
-  font-size: 22px;
-  font-weight: 00;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .header-right-section {
@@ -57,6 +55,7 @@ header {
   border-radius: var(--border-radius-s);
   transition: 0.2s ease-in-out;
   box-shadow: var(--shadow-xs);
+  cursor: pointer;
 }
 
 .header-btn:active {
