@@ -1,0 +1,41 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.hero h2 {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  position: relative;
+}
+
+.hero-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(3deg, var(--gradient-start), var(--gradient-end));
+}
+
+.hero-subtitle {
+  margin-top: 36px;
+  opacity: 0.5;
+  color: var(--text);
+}
