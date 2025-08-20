@@ -1,70 +1,148 @@
-# Getting Started with Create React App
+# Professionify React - AI Text Formatter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un tool AI moderno che formatta e riscrive il tuo testo in pochi secondi utilizzando l'intelligenza artificiale di Claude (Anthropic). Trasforma qualsiasi testo in base al destinatario, stile e lunghezza desiderata.
 
-## Available Scripts
+## 🚀 Caratteristiche
 
-In the project directory, you can run:
+- **Formattazione AI intelligente**: Utilizza Claude AI per riscrivere testi mantenendo il significato originale
+- **Parametri personalizzabili**: Scegli stile, destinatario e lunghezza del testo
+- **Interfaccia moderna**: Design responsive con tema chiaro/scuro
+- **Copia rapida**: Copia il risultato negli appunti con un click
+- **Server Express integrato**: Backend dedicato per le chiamate API
 
-### `npm start`
+## 🛠️ Tecnologie Utilizzate
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React 19, Redux Toolkit, React Router
+- **Backend**: Express.js, Node.js
+- **AI**: Anthropic Claude API (claude-3-5-haiku)
+- **Styling**: CSS custom con supporto per temi
+- **Icons**: React Icons
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Prerequisiti
 
-### `npm test`
+- Node.js (versione 16 o superiore)
+- NPM o Yarn
+- API Key di Anthropic Claude
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⚙️ Installazione
 
-### `npm run build`
+1. **Clona il repository**
+   ```bash
+   git clone <repository-url>
+   cd professionify-react
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Installa le dipendenze**
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Configura le variabili d'ambiente**
+   
+   Crea un file `.env` nella root del progetto:
+   ```env
+   ANTHROPIC_API_KEY=your_claude_api_key_here
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Avvia il server backend**
+   ```bash
+   node server.js
+   ```
+   Il server sarà disponibile su `http://localhost:3001`
 
-### `npm run eject`
+5. **Avvia l'applicazione React**
+   ```bash
+   npm start
+   ```
+   L'app sarà disponibile su `http://localhost:3000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🎯 Come Usare
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Seleziona i parametri**:
+   - **Stile**: professional email, casual message, formal letter, social media post
+   - **Destinatario**: Specifica a chi è diretto il messaggio
+   - **Lunghezza**: short (3-4 righe), standard (6-7 righe), long (8-9 righe)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Inserisci il testo**: Scrivi o incolla il testo da formattare nell'area di input
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Genera**: Clicca su "Generate text" per ottenere la versione AI-formattata
 
-## Learn More
+4. **Copia**: Usa il pulsante copia per copiare il risultato negli appunti
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Struttura del Progetto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+professionify-react/
+├── public/                 # File statici
+├── src/
+│   ├── Components/         # Componenti React
+│   │   ├── Dashboard/      # Componente principale
+│   │   ├── Header/         # Header con tema toggle
+│   │   ├── Hero/           # Sezione hero
+│   │   ├── Dropdowns/      # Menu di selezione parametri
+│   │   ├── TextArea/       # Area input/output testo
+│   │   └── ThemeSwitch/    # Switch tema chiaro/scuro
+│   ├── redux/              # Store e reducers Redux
+│   ├── services/           # Servizi API
+│   └── assets/             # Risorse statiche
+├── server.js               # Server Express backend
+└── package.json
+```
 
-### Code Splitting
+## 🔧 Funzionalità Tecniche
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Backend (server.js)
+- Server Express con supporto CORS
+- Proxy per API Anthropic Claude
+- Auto-restart con kill automatico della porta
+- Gestione errori e logging
 
-### Analyzing the Bundle Size
+### Frontend
+- **Redux**: Gestione stato per parametri di formattazione
+- **React Router**: Navigazione (attualmente single-page)
+- **Responsive Design**: Adattabile a mobile e desktop
+- **Theme System**: Supporto tema chiaro/scuro con persistenza
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Servizio AI (textFormatterService.js)
+- Integrazione Claude API
+- Prompt engineering ottimizzato
+- Gestione errori robusta
+- Supporto per diversi stili e lunghezze
 
-### Making a Progressive Web App
+## 📚 Script Disponibili
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- `npm start`: Avvia l'app in modalità sviluppo
+- `npm test`: Esegue i test
+- `npm run build`: Build per produzione
+- `npm run eject`: Eject configurazione Create React App
 
-### Advanced Configuration
+## 🌟 Esempi di Utilizzo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Input**: "Ciao, volevo sapere se domani possiamo fare la riunione"
 
-### Deployment
+**Parametri**: 
+- Stile: professional email
+- Destinatario: manager
+- Lunghezza: standard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Output**: "Gentile Manager, spero che questo messaggio La trovi bene. Desideravo cortesemente confermare la disponibilità per la riunione prevista domani. La prego di farmi sapere se l'orario concordato è ancora valido per Lei. Rimango a disposizione per qualsiasi eventuale modifica dell'agenda. Cordiali saluti."
 
-### `npm run build` fails to minify
+## 🤝 Contribuire
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork del progetto
+2. Crea un feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit delle modifiche (`git commit -m 'Add some AmazingFeature'`)
+4. Push al branch (`git push origin feature/AmazingFeature`)
+5. Apri una Pull Request
+
+## 📄 Licenza
+
+Questo progetto è distribuito sotto licenza MIT. Vedi il file `LICENSE` per maggiori dettagli.
+
+## 📞 Supporto
+
+Per problemi o domande, apri una issue su GitHub o contatta il team di sviluppo.
+
+---
+
+*Sviluppato con ❤️ utilizzando React e Claude AI*
