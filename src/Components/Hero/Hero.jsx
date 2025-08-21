@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className="hero">
       <h2>
-        Your <span className="gradient-text">formatted</span> text
+        Your <span className="gradient-text">professional</span> text
       </h2>
       <h2>
         in just{" "}

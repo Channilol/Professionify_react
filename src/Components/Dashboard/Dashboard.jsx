@@ -5,8 +5,6 @@ import Hero from "../Hero/Hero";
 import Dropdowns from "../Dropdowns/Dropdowns";
 import TextArea from "../TextArea/TextArea";
 
-
-
 export default function Dashboard() {
   return (
     <div className="dashboard">

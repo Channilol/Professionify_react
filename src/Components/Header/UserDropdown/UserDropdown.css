@@ -1,0 +1,172 @@
+.user-profile-container {
+  position: relative;
+}
+
+.user-profile-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 8px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-s);
+  transition: 0.2s ease-in-out;
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+}
+
+@keyframes dropDownFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.user-image {
+  height: 24px;
+  border-radius: 50%;
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 250px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-s);
+  margin-top: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 1000;
+  opacity: 1;
+  box-shadow: var(--shadow-s);
+  transform: translateY(-10px) scale(0.95);
+  animation: dropDownFadeIn 0.15s ease-out forwards;
+}
+
+.user-name {
+  font-size: 14px;
+}
+
+.user-name span {
+  font-weight: 600;
+}
+
+.user-plan {
+  padding: 12px;
+  background: linear-gradient(
+    160deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  border-radius: var(--border-radius-s);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-plan-top,
+.user-plan-bottom {
+  color: var(--bg);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.user-plan-top {
+  align-self: start;
+}
+
+.user-plan-bottom {
+  align-self: end;
+}
+
+.user-plan:hover {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end),
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  background-size: 800% 800%;
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in;
+  animation: gradientShift 20s ease-in-out infinite;
+  will-change: background-position;
+}
+
+.user-plan-top svg,
+.user-plan-bottom svg {
+  fill: var(--bg);
+  font-size: 22px;
+}
+
+.user-dropdown-divide-line {
+  height: 2px;
+  background-color: var(--border);
+}
+
+.logout-button {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  background-color: var(--bg);
+  border-radius: var(--border-radius-s);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.logout-button p,
+.logout-button svg {
+  color: var(--danger);
+  fill: var(--danger);
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s ease-in;
+}
+
+.logout-button svg {
+  font-size: 20px;
+}
+
+.logout-button:hover {
+  background-color: var(--danger);
+}
+
+.logout-button:hover svg,
+.logout-button:hover p {
+  color: var(--bg);
+  fill: var(--bg);
+  font-weight: 500;
+}
+
+.logout-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
