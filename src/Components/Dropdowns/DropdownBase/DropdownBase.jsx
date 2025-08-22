@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import { FiCheck } from "react-icons/fi";
-import './DropdownBase.css'
+import "./DropdownBase.css";
 
 export default function DropdownBase({ list, setFunction, stateName }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +17,18 @@ export default function DropdownBase({ list, setFunction, stateName }) {
       <div
         className="dropdown-item"
         onClick={() => setFunction(obj.name, toggleDropdown)}
+        key={obj.name}
       >
         <div className="dropdown-item-left">{obj.icon}</div>
         <div className="dropdown-item-right">
           <p>{obj.name}</p>
           <p className="model-description">{obj.description}</p>
         </div>
-        {obj.name === stateName ? <div className="item-check"><FiCheck /></div> : null}
+        {obj.name === stateName ? (
+          <div className="item-check">
+            <FiCheck />
+          </div>
+        ) : null}
       </div>
     );
   }

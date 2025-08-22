@@ -4,6 +4,7 @@ import Logo from "../../assets/logo.png";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import HeaderButton from "./HeaderButton/HeaderButton";
 import LoginButton from "./LoginButton/LoginButton";
+import { LuHistory, LuArchive, LuLibrary, LuBookOpen } from "react-icons/lu";
 
 export default function Header() {
   return (
@@ -15,8 +16,9 @@ export default function Header() {
         <p className="header-text">Professionify</p>
       </div>
       <div className="header-right-section">
-        <LoginButton />
         <HeaderButton child={<BsFillMoonStarsFill />} />
+        <HeaderButton child={<LuLibrary />} />
+        <LoginButton />
       </div>
     </header>
   );

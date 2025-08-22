@@ -14,6 +14,7 @@ export default function UserDropdown() {
   const user = useUser();
   const supabase = useSupabaseClient();
   const userName = user?.user_metadata?.name || user?.email;
+  const userEmail = user?.email || "no_email_data";
   const userPlan = user?.user_metadata?.plan || "free";
   const userImage = user?.user_metadata?.avatar_url || null;
 
@@ -29,6 +30,10 @@ export default function UserDropdown() {
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
+  };
+
+  const capitalize = (string) => {
+    return String(string).charAt(0).toUpperCase() + String(string).slice(1);
   };
 
   useEffect(() => {
@@ -47,18 +52,27 @@ export default function UserDropdown() {
         ref={buttonRef}
         onClick={toggleDropdown}
       >
-        {<img className="user-image" src={userImage} alt="" srcset="" /> ?? (
-          <BsPersonCircle />
-        )}
+        {(
+          <img
+            className="user-image"
+            src={userImage}
+            alt={<BsPersonCircle />}
+          />
+        ) ?? <BsPersonCircle />}
       </button>
       {isOpen ? (
         <div className="user-dropdown-menu" ref={dropdownRef}>
-          <p className="user-name">
-            Hello <span>{userName}</span>!
-          </p>
+          <div>
+            <p className="user-name">
+              Hello <span>{userName}</span>!
+            </p>
+            {userEmail !== userName ? (
+              <p className="user-email">{userEmail}</p>
+            ) : null}
+          </div>
           <div className="user-plan">
             <p className="user-plan-top">
-              Piano {userPlan}{" "}
+              {capitalize(userPlan)} plan
               {userPlan === "free" ? <HiSparkles /> : <LuCrown />}
             </p>
             {userPlan === "free" ? (

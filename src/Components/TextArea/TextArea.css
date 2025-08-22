@@ -9,6 +9,12 @@
   margin-top: 36px;
 }
 
+.main-section-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .input-output-area {
   display: flex;
   justify-content: space-between;
@@ -154,6 +160,20 @@
 .generate-text-button.generation-done {
   animation: scaleOutAnimation 0.35s ease-in-out forwards,
     gradientShift 20s ease-in-out infinite;
+}
+
+.conversation-title-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.conversation-label {
+  opacity: 0.33;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 700;
 }
 
 @keyframes scaleInAnimation {

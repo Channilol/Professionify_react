@@ -1,0 +1,81 @@
+.conversation-dropdown-container {
+  position: relative;
+}
+
+.conversation-dropdown-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 175px;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-s);
+  transition: 0.2s ease-in-out;
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+}
+
+.conversation-button-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@keyframes dropDownFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.conversation-dropdown-menu {
+  position: absolute;
+  bottom: 105%;
+  right: 0;
+  width: 250px;
+  background: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-s);
+  margin-top: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 1000;
+  opacity: 1;
+  box-shadow: var(--shadow-s);
+  transform: translateY(10px) scale(0.95);
+  animation: dropDownFadeIn 0.15s ease-out forwards;
+}
+
+.conversation-dropdown-item {
+  display: flex;
+  align-items: start;
+  gap: 6px;
+  padding: 8px;
+  border-radius: var(--border-radius-s);
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.conversation-dropdown-item:hover {
+  background-color: var(--hover);
+}
+
+.conversation-dropdown-item-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: -3px;
+}
+
+.conversation-dropdown-item-right {
+  font-size: 14px;
+  font-weight: 500;
+  flex-grow: 3;
+}
