@@ -44,7 +44,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   z-index: 1000;
   opacity: 1;
   box-shadow: var(--shadow-s);
@@ -62,7 +62,8 @@
   cursor: pointer;
 }
 
-.conversation-dropdown-item:hover {
+.conversation-dropdown-item:hover,
+.create-conversation-button:hover {
   background-color: var(--hover);
 }
 
@@ -78,4 +79,20 @@
   font-size: 14px;
   font-weight: 500;
   flex-grow: 3;
+}
+
+.create-conversation-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: var(--border-radius-s);
+  transition: 0.1s ease;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.conversation-dropdown-item:hover {
+  background-color: var(--hover);
 }

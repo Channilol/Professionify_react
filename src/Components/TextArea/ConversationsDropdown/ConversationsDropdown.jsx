@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./ConversationsDropdown.css";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { LuInbox } from "react-icons/lu";
-import { MdCheck } from "react-icons/md";
 import { BsChevronDown } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,9 +9,11 @@ import {
   changeActiveConversation,
 } from "../../../redux/actions";
 import { FiCheck } from "react-icons/fi";
+import { FiPlus } from "react-icons/fi";
 
 export default function ConversationsDropdown() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
   const dispatch = useDispatch();
@@ -28,6 +29,10 @@ export default function ConversationsDropdown() {
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleDialog = () => {
+    setIsDialogOpen(!isDialogOpen);
   };
 
   const handleClick = (event) => {
@@ -91,6 +96,10 @@ export default function ConversationsDropdown() {
           ) : (
             <></>
           )}
+          <div className="create-conversation-button">
+            <FiPlus />
+            <p>New conversation</p>
+          </div>
         </div>
       ) : (
         <></>
