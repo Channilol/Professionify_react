@@ -2,6 +2,9 @@
 
 Un tool AI moderno che formatta e riscrive il tuo testo in pochi secondi utilizzando l'intelligenza artificiale di Claude (Anthropic). Trasforma qualsiasi testo in base al destinatario, stile e lunghezza desiderata.
 
+## 🚀 Preview
+![Demo App Flutter](https://i.ibb.co/NdKy4sXS/Professionify-Gif.gif)
+
 ## 🚀 Caratteristiche
 
 - **Formattazione AI intelligente**: Utilizza Claude AI per riscrivere testi mantenendo il significato originale
